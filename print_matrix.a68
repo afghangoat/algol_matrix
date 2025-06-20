@@ -1,0 +1,49 @@
+BEGIN
+    COMMENT Variable declaration COMMENT
+    
+    CHAR empty = " ";
+    INT matrix_width=3;
+    INT matrix_height=3;
+    [,]REAL f = ((3.0,4.0,5.0),
+                (9.0,32.0,6.0),
+                (2.0,5.0,7.0));
+
+	[,]REAL f_transponated = ((0.0,0.0,0.0),
+                (0.0,0.0,0.0),
+                (0.0,0.0,0.0));
+    
+    
+    
+    COMMENT REAL cur=f[i,i]; COMMENT
+    
+    print(empty);
+	print(("f matrix transponed:",newline));
+
+	COMMENT calculate the transponed f matrix for n*n matrices COMMENT
+	FOR i FROM 1 TO matrix_height DO
+        FOR j FROM 1 TO matrix_width DO
+            REAL cur =f[j,i];
+            print(cur)
+        OD;
+        print(newline)
+    OD;
+	
+    GOTO print_matrix;
+    print_matrix:
+        FOR i FROM 1 TO matrix_height DO
+            FOR j FROM 1 TO matrix_width DO
+                REAL cur=f_transponated[i,j];
+                print(cur)
+            OD;
+            print(newline)
+        OD
+    
+    COMMENT INT x_pos=1;
+	
+    INT y_pos=1;
+	
+    GOTO gauss_elimination;
+    gauss_elimination:
+        TODO here COMMENT
+
+END
